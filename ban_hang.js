@@ -1,80 +1,80 @@
 // push sản phẩm bán hàng lên local
 
-let listProduct = [
-    {
-      name: "Áo loại 1",
-      prince: "30k",
-      image: "/image/ao_1.jpg",
-      id: 1 ,
-    },
-    {
-      name: "Áo loại 2",
-      prince: "30k",
-      image: "/image/ao_2.jpg",
-      id: 2 ,
-    },
-    {
-      name: "Áo loại 3",
-      prince: "30k",
-      image: "/image/ao_3.jpg",
-      id: 3,
-    },
-    {
-      name: "Áo loại 4",
-      prince: "30k",
-      image: "/image/ao_4.jpg",
-      id: 4 ,
-    },
-    {
-      name: "Áo loại 5",
-      prince: "30k",
-      image: "/image/ao_5.jpg",
-      id: 5 ,
-    },
-    {
-      name: "Áo loại 6",
-      prince: "30k",
-      image: "/image/ao_6.jpg",
-      id: 6 ,
-    },
-    {
-      name: "Áo loại 7",
-      prince: "30k",
-      image: "/image/ao_7.jpg",
-      id: 7 ,
-    },
-    {
-      name: "Áo loại 8",
-      prince: "30k",
-      image: "/image/ao_8.jpg",
-      id: 8 ,
-    },
-    {
-      name: "Áo loại 9",
-      prince: "30k",
-      image: "/image/ao_9.jpg",
-      id: 9 ,
-    },
-    {
-      name: "Áo loại 10",
-      prince: "30k",
-      image: "/image/ao_10.jpg",
-      id: 10 ,
-    },
-    {
-      name: "Áo loại 11",
-      prince: "30k",
-      image: "/image/ao_11.jpg",
-      id: 11 ,
-    },
-    {
-      name: "Áo loại 12",
-      prince: "30k",
-      image: "/image/ao_12.jpg",
-      id: 12 ,
-    },
-]
-localStorage.setItem ("listProduct", JSON.stringify(listProduct));
+// var listProduct = [
+//     {
+//       name: "Áo loại 1",
+//       prince: "30k",
+//       image: "/image/ao_1.jpg",
+//       id: 1 ,
+//     },
+//     {
+//       name: "Áo loại 2",
+//       prince: "30k",
+//       image: "/image/ao_2.jpg",
+//       id: 2 ,
+//     },
+//     {
+//       name: "Áo loại 3",
+//       prince: "30k",
+//       image: "/image/ao_3.jpg",
+//       id: 3,
+//     },
+//     {
+//       name: "Áo loại 4",
+//       prince: "30k",
+//       image: "/image/ao_4.jpg",
+//       id: 4 ,
+//     },
+//     {
+//       name: "Áo loại 5",
+//       prince: "30k",
+//       image: "/image/ao_5.jpg",
+//       id: 5 ,
+//     },
+//     {
+//       name: "Áo loại 6",
+//       prince: "30k",
+//       image: "/image/ao_6.jpg",
+//       id: 6 ,
+//     },
+//     {
+//       name: "Áo loại 7",
+//       prince: "30k",
+//       image: "/image/ao_7.jpg",
+//       id: 7 ,
+//     },
+//     {
+//       name: "Áo loại 8",
+//       prince: "30k",
+//       image: "/image/ao_8.jpg",
+//       id: 8 ,
+//     },
+//     {
+//       name: "Áo loại 9",
+//       prince: "30k",
+//       image: "/image/ao_9.jpg",
+//       id: 9 ,
+//     },
+//     {
+//       name: "Áo loại 10",
+//       prince: "30k",
+//       image: "/image/ao_10.jpg",
+//       id: 10 ,
+//     },
+//     {
+//       name: "Áo loại 11",
+//       prince: "30k",
+//       image: "/image/ao_11.jpg",
+//       id: 11 ,
+//     },
+//     {
+//       name: "Áo loại 12",
+//       prince: "30k",
+//       image: "/image/ao_12.jpg",
+//       id: 12 ,
+//     },
+// ]
+// localStorage.setItem ("listProduct", JSON.stringify(listProduct));
 
 // nhấn vào nút đăng nhập
 let get_Login = document.getElementById("get_Login");
