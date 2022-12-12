@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="ban_hang.css" />
+    <script
+      src="https://kit.fontawesome.com/7de9ee439a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- trang đầu của web! -->
+      <nav>
+        <!-- body của header-->
+        <div class="img-nav">
+          <img id="anh" src="" style="width: 50px" />
+        </div>
+        <div class="content-nav">
+          <ul>
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Sản Phẩm</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+            <li><a href="#">Giới Thiệu</a></li>
+          </ul>
+          <form>
+            <input
+              type="text"
+              name="search"
+              placeholder="Tìm kiếm sản phẩm..."
+            />
+            <button type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <!-- The Modal -->
+
+        <!-- nút truy cập vào giỏ hàng ẩn!-->
+        <button id="cart"><i class="fa-brands fa-shopify"></i> Giỏ Hàng</button>
+        <div id="myModal" class="modal">
+          <!-- Giỏ hàng ẩn-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- đầu -->
+              <h5 class="modal-title">Giỏ Hàng</h5>
+              <span class="close">&times;</span>
+              <!-- nút tắt -->
+            </div>
+            <div class="modal-body">
+              <!-- thân-->
+              <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                <span class="cart-price cart-header cart-column">Giá</span>
+                <span class="cart-quantity cart-header cart-column"
+                  >Số Lượng</span
+                >
+              </div>
+              <div class="cart-items">
+                <div class="cart-row">
+                  <div class="cart-item cart-column">
+                    <img
+                      class="cart-item-image"
+                      src="/Form_mau/image/ao_1.png"
+                      width="100"
+                      height="100"
+                    />
+                    <span class="cart-item-title">Áo Thun</span>
+                  </div>
+                  <span class="cart-price cart-column">25000đ</span>
+                  <div class="cart-quantity cart-column">
+                    <input
+                      class="cart-quantity-input"
+                      type="number"
+                      value="1"
+                    />
+                    <input type="button" class="btn btn-danger" value="Xóa" />
+                  </div>
+                </div>
+                <div class="cart-row">
+                  <div class="cart-item cart-column">
+                    <img
+                      class="cart-item-image"
+                      src="/Form_mau/image/ao_2.jpg"
+                      width="100"
+                      height="100"
+                    />
+                    <span class="cart-item-title">Áo Thun</span>
+                  </div>
+                  <span class="cart-price cart-column">25000đ</span>
+                  <div class="cart-quantity cart-column">
+                    <input
+                      class="cart-quantity-input"
+                      type="number"
+                      value="2"
+                    />
+                    <input type="button" class="btn btn-danger" value="Xóa" />
+                  </div>
+                </div>
+                <div class="cart-total">
+                  <strong class="cart-total-title">Tổng Cộng:</strong>
+                  <span class="cart-total-price">50000đ</span>
+                </div>
+              </div>
+              <!-- <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-header cart-column">Giá</span>
+                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                        </div>
+                        <div class="cart-items">
+
+                        </div>
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Tổng Cộng:</strong>
+                            <span class="cart-total-price">0VNĐ</span>
+                        </div> -->
+            </div>
+            <div class="modal-footer">
+              <!-- cuối-->
+              <button
+                id="close_tab"
+                type="button"
+                class="btn btn-secondary close-footer"
+              >
+                Đóng
+              </button>
+              <button type="button" class="btn btn-primary order">
+                Thanh Toán
+              </button>
+            </div>
+          </div>
+        </div>
+        <button id="get_Login">Đăng Nhập</button>
+        <div class="get_use_login" id="get_use_login">
+          <form action="" method="POST" class="form" id="form-2">
+            <h3 class="heading">Đăng nhập</h3>
+            <span id="close_login"
+              ><i class="fa-sharp fa-solid fa-circle-xmark"></i
+            ></span>
+            <div class="spacer"></div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email_login"
+                name="email"
+                type="text"
+                placeholder="email@domain.com"
+                class="form-control"
+              />
+              <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Mật khẩu</label>
+              <input
+                id="password_login"
+                name="password"
+                type="password"
+                placeholder="Nhập mật khẩu"
+                class="form-control"
+              />
+              <i
+                class="fa-solid fa-eye-slash"
+                id="get_eye_3"
+                onclick="getEye_3()"
+              ></i>
+              <span
+                class="form-message"
+                id="error_login"
+                style="color: red; font-size: 15px; display: none"
+                >Mật khẩu hoặc email nhập chưa chính xác!</span
+              >
+            </div>
+
+            <input type="button" id="dangnhap" value="Đăng Nhập" />
+          </form>
+        </div>
+      </nav>
+    </header>
+    <!-- link-->
+
+    <!-- content -->
+    <section class="wrapper" id="wrapper_set">
+      <div class="products" id="push_mang">
+        <!--sản phẩm được lưu ở đây-->
+      </div>
+    </section>
+    <!-- footer -->
+    <footer>
+      <div class="container_fooder">
+        <!--Bắt Đầu Nội Dung Giới Thiệu-->
+        <div class="noi-dung about">
+          <h2>Về Chúng Tôi</h2>
+          <p>Lorem ipsumdolor sit...</p>
+          <ul class="social-icon">
+            <li>
+              <a href=""><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Giới Thiệu-->
+        <!--Bắt Đầu Nội Dung Đường Dẫn-->
+        <div class="noi-dung links">
+          <h2>Đường Dẫn</h2>
+          <ul>
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Về Chúng Tôi</a></li>
+            <li><a href="#">Thông Tin Liên Lạc</a></li>
+            <li><a href="#">Dịch Vụ</a></li>
+            <li><a href="#">Điều Kiện Chính Sách</a></li>
+          </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Đường Dẫn-->
+        <!--Bắt Đâu Nội Dung Liên Hệ-->
+        <div class="noi-dung contact">
+          <h2>Thông Tin Liên Hệ</h2>
+          <ul class="info">
+            <li>
+              <span><i class="fa fa-map-marker"></i></span>
+              <span
+                >Đường Số 1<br />
+                Quận 1, Thành Phố Hồ Chí Minh<br />
+                Việt Nam</span
+              >
+            </li>
+            <li>
+              <span><i class="fa fa-phone"></i></span>
+              <p>
+                <a href="#">+84 123 456 789</a>
+                <br />
+                <a href="#">+84 987 654 321</a>
+              </p>
+            </li>
+            <li>
+              <span><i class="fa fa-envelope"></i></span>
+              <p><a href="#">diachiemail@gmail.com</a></p>
+            </li>
+            <li>
+              <form class="form_fooder">
+                <input
+                  type="email"
+                  class="form__field"
+                  placeholder="Đăng Ký Subscribe Email"
+                />
+                <button type="button" class="abc btn--primary uppercase">
+                  Gửi
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Liên Hệ-->
+      </div>
+    </footer>
+  </body>
+
+  <script src="ban_hang.js"></script>
+</html>

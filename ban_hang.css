@@ -1,0 +1,784 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+li {
+    list-style: none;
+}
+
+/* header */
+/*thêm thộc tính cho header chạy theo khi cuộn chuột*/
+header {
+    position: fixed;
+    width: 100%;
+}
+/* ảnh */
+
+/* set thẻ nav trong header*/
+nav {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    background: white;
+}
+/* set nav trong header*/
+nav .content-nav {
+    display: flex;
+    line-height: 2rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 60%;
+}
+
+nav .content-nav ul {
+    display: flex;
+}
+
+nav .content-nav ul li a {
+    text-decoration: none;
+    color: #43433e;
+    text-transform: uppercase;
+    padding: 0 15px;
+    font-weight: 800;
+}
+
+nav .content-nav ul li a:hover {
+    color: blueviolet;
+}
+
+.content-nav form {
+    position: relative;
+}
+
+.content-nav form input {
+    border: none;
+    background: #fff;
+    padding: 7px;
+    outline: none;
+    border-radius: 12px;
+}
+
+.content-nav form button {
+    padding: 5px;
+    border-radius: 12px;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    border: none;
+    outline: none;
+    background: #fff;
+}
+
+
+/* set modal đang được ẩn trong giao diện */
+.modal {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#myModal {
+    display: none;
+}
+.modal-content {
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    border-top: 1px solid #aaaaaa;
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-top: 1px solid #aaaaaa;
+    padding: 1rem;
+}
+
+.modal-footer>:not(:first-child) {
+    margin-left: .25rem;
+}
+
+    /* set nút button trong dao diện ẩn*/
+.btn {
+    cursor: pointer;
+    outline: none;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: all .2s ease-in-out;
+}
+
+.btn-secondary {
+    color: #292b2c;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+}
+/* css trong div-modal ẩn header body footer*/
+.modal-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #aaaaaa;
+    padding: 1rem;
+}
+
+h5.modal-title {
+    font-size: 1.5rem;
+}
+
+.close {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*nút ấn vào đăng nhập*/
+#get_Login {
+    font-size: 15px;
+    color: #fff;
+    background: #bbd923;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    margin-left: 1rem;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/*xử lý đăng nhập ẩn khi click vào nút đăng nhập*/
+
+.get_use_login {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    /* display: none; */
+}
+.get_use_login_dangnhap {
+    width: 300px;
+    display: flex;
+    
+}
+
+/* nút ấn vào giỏ hàng*/
+#cart {
+    font-size: 15px;
+    color: #fff;
+    background: #bbd923;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    margin-left: 1rem;
+    padding: 12px;
+    cursor: pointer;
+}
+#cart {
+    display: block;
+}
+#cart:hover {
+    border-color: blueviolet;
+}
+
+/* form đăng ký*/
+#get_use_login {
+    display: none;
+}
+
+#close_login{
+    position: absolute;
+    top: 135px;
+    left: 890px;
+}
+
+#get_eye_3 {
+    position: absolute;
+    top: 340px;
+    left: 880px;
+}
+.form {
+    width: 360px;
+    min-height: 100px;
+    padding: 32px 24px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    margin: 24px;
+    align-self: center;
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, .1);
+    margin-left: 38%;
+}
+
+.form .heading {
+    font-size: 2rem;
+}
+
+.form .desc {
+    text-align: center;
+    color: #636d77;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    line-height: 2.4rem;
+    margin-top: 16px;
+    font-weight: 300;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+}
+
+.form-label,
+.form-message {
+    text-align: left;
+}
+
+.form-label {
+    font-weight: 700;
+    padding-bottom: 6px;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+}
+
+.form-control {
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+.form-control:hover {
+    border-color: #1dbfaf;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+.form-message {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
+}
+
+/* cart trong bảng ẩn */
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+
+/* wrapper */
+.wrapper {
+    padding: 10rem;
+}
+
+
+
+
+.products ul .main-product {
+    margin: 19px;
+    display: block;
+    float: left;
+    width: 30%;
+    border: 1px solid black;
+}
+
+.products ul .no-margin {
+    margin-right: 0;
+}
+
+.products ul .img-product img {
+    width: 100%;
+}
+
+.content-product .content-product-h3 {
+    padding: .5rem 0;
+    overflow: hidden;
+    color: #222;
+    font-weight: 500;
+    font-size: 16px;
+    max-height: 50px;
+    min-height: 50px;
+    text-align: center;
+    line-height: 19px;
+    margin: 0 0 5px;
+}
+
+.content-product .content-product-deltals {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.main-product .content-product .content-product-deltals .price {
+    color: #c7b200;
+    font-weight: 700;
+    margin-right: 1rem;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.content-product .content-product-deltals .price .money {
+    vertical-align: middle;
+}
+
+.content-product .content-product-deltals .btn-cart {
+    background: #f1df11;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.content-product .content-product-deltals .btn-cart:hover {
+    background: #c7b200;
+}
+
+/* footer */
+.footer-item {
+    padding: .5rem 2rem;
+    background: #f1df11;
+    display: flex;
+
+}
+
+.footer-item .img-footer {
+    align-items: center;
+    display: flex;
+}
+
+.footer-item .img-footer img {
+    width: 100%;
+}
+
+.footer-item .social-footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.footer-item .social-footer li a {
+    color: #000000;
+    font-size: 2rem;
+}
+
+.footer-item .social-footer li:last-child {
+    margin-left: .5rem;
+}
+/* footer */
+.footer-item {
+    padding: .5rem 2rem;
+    background: #f1df11;
+    display: flex;
+
+}
+
+.footer-item .img-footer {
+    align-items: center;
+    display: flex;
+}
+
+.footer-item .img-footer img {
+    width: 100%;
+}
+
+.footer-item .social-footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.footer-item .social-footer li a {
+    color: #000000;
+    font-size: 2rem;
+}
+
+.footer-item .social-footer li:last-child {
+    margin-left: .5rem;
+}
+
+
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .container_fooder {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+/*Thiết Lập Cho Thành Phần Nội Dung Giới Thiệu*/
+footer .container_fooder .noi-dung {
+    margin-right: 30px;
+    
+}
+
+footer .container_fooder .noi-dung.about {
+    width: 20%;
+}
+
+footer .container_fooder .noi-dung.about h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .container_fooder .noi-dung.about h2:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+footer .container_fooder .noi-dung.about p {
+    color: #999;
+}
+
+/*Thiết Lập Cho Thành Phần Icon Mạng Xã Hội*/
+.social-icon {
+    margin-top: 20px;
+    display: flex;
+}
+
+.social-icon li {
+    list-style: none;
+}
+
+.social-icon li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.social-icon li a:hover {
+    background: #f00;
+}
+
+.social-icon li a .fa {
+    color: #fff;
+    font-size: 20px;
+}
+
+.links h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.links h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.links h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+.links {
+    position: relative;
+    width: 25%;
+}
+
+.links ul li {
+    list-style: none;
+}
+
+.links ul li a {
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.links ul li a:hover {
+    color: #fff;
+}
+
+.contact h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contact h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+.contact {
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+
+.contact .info {
+    position: relative;
+}
+
+.contact .info li {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.contact .info li span:nth-child(1) {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contact .info li span {
+    color: #999;
+}
+
+.contact .info li a {
+    color: #999;
+    text-decoration: none;
+}
+
+.abc {
+    display: inline-block;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin-top: 16px;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+    
+}
+
+.abc  {
+    background: #222;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    padding: 8px 24px;
+}
+
+.abc:hover {
+    background: #f00;
+}
+
+.abc:active {
+    background: #f00;
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2);
+}
+
+.form__field {
+    width: 90%;
+    background: #fff;
+    color: #a3a3a3;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+    border: 0;
+    outline: 0;
+    padding: 8px 4px;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 40px;
+    }
+
+    footer .container_fooder {
+        flex-direction: column;
+    }
+
+    footer .container_fooder .noi-dung {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    footer .container_fooder,
+    .noi-dung.about,
+    .links,
+    .contact {
+        width: 100%;
+    }
+}
